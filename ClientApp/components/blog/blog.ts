@@ -8,7 +8,7 @@ export default class BlogComponent extends Vue {
     posts: any[] = [];
 
     mounted() {
-        axios.get('http://visualbam.azurewebsites.net/api/posts')
+        axios.get('https://visualbam.azurewebsites.net/api/posts')
             .then(response => {
                 this.posts = response.data;
             });
