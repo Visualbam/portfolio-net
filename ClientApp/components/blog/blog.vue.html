@@ -1,0 +1,17 @@
+<template>
+    <div class="blog-container">
+        <h1>{{blogHeader}}</h1>
+        <p>There are currently {{posts.length}} posts to read.</p>
+
+        <br>
+
+        <div v-for="post in posts">
+            <h5>{{post.title}}</h5>
+            <p>{{post.content}}</p>
+            <span>{{post.category}}</span>
+            <hr>
+        </div>
+    </div>
+</template>
+
+<script src="./blog.ts"></script>
