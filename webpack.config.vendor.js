@@ -11,8 +11,9 @@ module.exports = (env) => {
         resolve: { extensions: [ '.js' ] },
         entry: {
             vendor: [
-                'bootstrap',
-                'bootstrap/dist/css/bootstrap.css',
+                'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons',
+                'vuetify/dist/vuetify.js',
+                'vuetify/dist/vuetify.min.css',
                 'event-source-polyfill',
                 'isomorphic-fetch',
                 'jquery',
@@ -26,7 +27,7 @@ module.exports = (env) => {
                 { test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/, use: 'url-loader?limit=100000' }
             ]
         },
-        output: { 
+        output: {
             path: path.join(__dirname, 'wwwroot', 'dist'),
             publicPath: 'dist/',
             filename: '[name].js',

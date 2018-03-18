@@ -1,14 +1,39 @@
 <template>
-    <div id='app-root' class="container-fluid">
-        <div class="row">
-            <div class="col-sm-3">
-                <menu-component />
-            </div>
-            <div class="col-sm-9">
-                <router-view></router-view>
-            </div>
-        </div>
-    </div>
+    <v-app id="inspire">
+        <v-navigation-drawer
+                fixed
+                v-model="drawer"
+                app>
+            <ul class="nav navbar-nav">
+                <li>
+                    <router-link to="/blog" :exact="true">
+                        <span class="glyphicon glyphicon-heart-empty"></span> Blog
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/counter">
+                        <span class="glyphicon glyphicon-education"></span> Counter
+                    </router-link>
+                </li>
+            </ul>
+        </v-navigation-drawer>
+        <v-toolbar color="indigo" dark fixed app>
+            <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+            <v-toolbar-title>Application</v-toolbar-title>
+        </v-toolbar>
+        <v-content>
+            <v-container fluid fill-height>
+                <v-layout
+                        justify-center
+                        align-center>
+                    <router-view></router-view>
+                </v-layout>
+            </v-container>
+        </v-content>
+        <v-footer color="indigo" app>
+            <span class="white--text">&copy; 2017</span>
+        </v-footer>
+    </v-app>
 </template>
 
 <script src="./app.ts"></script>

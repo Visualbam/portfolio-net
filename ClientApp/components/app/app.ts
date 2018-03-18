@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Component } from 'vue-property-decorator';
+import { Component, Prop } from 'vue-property-decorator';
 
 @Component({
     components: {
@@ -7,4 +7,9 @@ import { Component } from 'vue-property-decorator';
     }
 })
 export default class AppComponent extends Vue {
+    @Prop()
+    drawer: null;
+
+    @Prop()
+    source: string;
 }

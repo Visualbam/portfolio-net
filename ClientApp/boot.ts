@@ -1,23 +1,21 @@
-import './css/site.css';
-import 'bootstrap';
+declare var require: any;
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
+import './styles/main.styl';
 
 Vue.use(VueRouter);
 Vue.use(Vuetify);
 
 const routes = [
-    { path: '*', component: require('./components/blog/blog.vue.html') },
-    { path: '/blog', component: require('./components/blog/blog.vue.html') },
-    { path: '/blog/:category', component: require('./components/blog/category/category.vue.html') },
-    { path: '/counter', component: require('./components/counter/counter.vue.html') },
-    { path: '/fetchdata', component: require('./components/fetchdata/fetchdata.vue.html') }
+    { path: '*', component: require('./components/blog/blog.vue.html').default },
+    { path: '/blog', component: require('./components/blog/blog.vue.html').default },
+    { path: '/blog/:category', component: require('./components/blog/category/category.vue.html').default },
+    { path: '/counter', component: require('./components/counter/counter.vue.html').default },
 ];
 
 new Vue({
     el: '#app-root',
     router: new VueRouter({ mode: 'history', routes: routes }),
-    render: h => h(require('./components/app/app.vue.html'))
+    render: h => h(require('./components/app/app.vue.html').default)
 });
