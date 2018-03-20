@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Component } from 'vue-property-decorator';
+import { Component, Prop, Provide } from 'vue-property-decorator';
 import axios from 'axios';
 
 @Component

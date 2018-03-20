@@ -3,7 +3,7 @@
         <v-flex xs12 sm6 offset-sm3>
             <h1>{{blogHeader}}</h1>
             <p>There are currently {{posts.length}} posts to read.</p>
-            <v-card v-for="post in posts">
+            <v-card v-for="post in posts" :key="post.post_id">
                 <v-card-title primary-title>
                     <div>
                         <h3 class="headline mb-0">{{post.title}}</h3>
@@ -13,18 +13,6 @@
             </v-card>
         </v-flex>
     </v-layout>
-    <!--<div class="blog-container">-->
-
-
-        <!--<br>-->
-
-        <!--<div >-->
-            <!--<h5>{{post.title}}</h5>-->
-            <!--<p>{{post.content}}</p>-->
-            <!--<span>{{post.category}}</span>-->
-            <!--<hr>-->
-        <!--</div>-->
-    <!--</div>-->
 </template>
 
 <script src="./blog.ts"></script>

@@ -7,9 +7,9 @@ import { Component, Prop } from 'vue-property-decorator';
     }
 })
 export default class AppComponent extends Vue {
-    @Prop()
-    drawer: null;
+    public drawer: boolean = false;
 
-    @Prop()
-    source: string;
+    toggleDrawer() {
+        this.drawer = !this.drawer;
+    }
 }

@@ -13,6 +13,7 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets" />
     <Folder Include="ClientApp\components\blog\post" />
     <Folder Include="ClientApp\components\resume" />
   </ItemGroup>
