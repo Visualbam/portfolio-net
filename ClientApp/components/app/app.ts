@@ -32,6 +32,10 @@ export default class AppComponent extends Vue {
     }
 
     mounted() {
+        if (this.$route.fullPath === '/') {
+            this.$router.push('blog');
+        }
+
         this.activeRoute = this.$route.fullPath;
     }
 }

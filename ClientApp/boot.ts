@@ -9,7 +9,6 @@ Vue.use(Vuetify);
 
 const routes = [
     { path: '*', component: require('./components/blog/blog.vue.html').default },
-    { path: '/', redirect: '/blog' },
     { path: '/blog', component: require('./components/blog/blog.vue.html').default },
     { path: '/blog/:category', component: require('./components/blog/category/category.vue.html').default },
     { path: '/counter', component: require('./components/counter/counter.vue.html').default },
