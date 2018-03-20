@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Component } from 'vue-property-decorator';
+import { Component, Prop, Watch } from 'vue-property-decorator';
 
 @Component({
     components: {
@@ -7,4 +7,31 @@ import { Component } from 'vue-property-decorator';
     }
 })
 export default class AppComponent extends Vue {
+    public activeRoute: string = '';
+    public drawer: boolean = true;
+    public routes: any = [
+        {
+            route: 'blog',
+            action: null,
+            title: 'Blog'
+        },
+        {
+            route: 'counter',
+            action: null,
+            title: 'Counter'
+        },
+    ];
+
+    toggleDrawer() {
+        this.drawer = true;
+    }
+
+    @Watch('$route')
+    onRoutwChanged(val: any, oldVal: any) {
+        this.activeRoute = val.fullPath;
+    }
+
+    mounted() {
+        this.activeRoute = this.$route.fullPath;
+    }
 }
