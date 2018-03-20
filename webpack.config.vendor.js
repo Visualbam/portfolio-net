@@ -11,7 +11,6 @@ module.exports = (env) => {
         resolve: { extensions: [ '.js' ] },
         entry: {
             vendor: [
-                'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons',
                 'vuetify/dist/vuetify.js',
                 'vuetify/dist/vuetify.min.css',
                 'event-source-polyfill',
