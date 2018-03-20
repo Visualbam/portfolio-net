@@ -1,0 +1,29 @@
+.side-nav
+    height 100vh
+    background $dark-purple
+    border-left 5px $pink solid
+
+    .toolbar
+        background linear-gradient(to right, $dark-purple, $pink)
+
+        &:after
+            background-image url("../../assets/nav-bg.png")
+            background-size: 100% 100%
+            content: "";
+            opacity: 0.75;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;
+
+        img
+            width 100px
+            margin 0 auto
+
+        button
+            background-image url("../../assets/nav-menu.png")
+            background-size: 100% 100%
+            width 34px
+            height 17px
