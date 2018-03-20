@@ -9,14 +9,15 @@
 
         &:hover
             color: $light-purple!important
-            background lighten($dark-purple, 8%)!important
+            background  alpha(lighten($dark-purple, 8%), 0.5)!important
+
 
             .icon
                 color: $light-purple!important
 
 .list .router-link-exact-active .list__tile, .list .router-link-exact-active .icon
     color $light-purple!important
-    background-color lighten($dark-purple, 8%)!important
+    background-color alpha(lighten($dark-purple, 8%), 0.5)!important
 
 .list .icon
     font-size: 1rem;

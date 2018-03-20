@@ -8,6 +8,7 @@ import { Component, Prop, Watch } from 'vue-property-decorator';
 })
 export default class AppComponent extends Vue {
     public activeRoute: string = '';
+    public mini: boolean = false;
     public drawer: boolean = true;
     public routes: any = [
         {
@@ -23,7 +24,8 @@ export default class AppComponent extends Vue {
     ];
 
     toggleDrawer() {
-        this.drawer = true;
+        // this.drawer = !this.drawer;
+        this.mini = !this.mini;
     }
 
     @Watch('$route')
