@@ -10,8 +10,7 @@
         font-size 14px
 
     .list__tile__action
-        margin 0 1.5rem 0 4px
-        min-width 0
+        min-width 42px
 
     .list .icon
         font-size 10px
@@ -33,9 +32,16 @@
             z-index -1
 
         .logo
+            animation: fadein 1s;
             width 100px
             margin 0 auto
 
-        button
+        .toolbar__content button
+            margin-left 1.5rem
             position absolute
-            color $pink
+            color white
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
