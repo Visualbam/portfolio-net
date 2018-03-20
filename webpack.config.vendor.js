@@ -5,13 +5,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = (env) => {
     const isDevBuild = !(env && env.prod);
     const extractCSS = new ExtractTextPlugin('vendor.css');
-    console.log(isDevBuild)
+
     return [{
         stats: { modules: false },
         resolve: { extensions: [ '.js' ] },
         entry: {
             vendor: [
-                'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons',
                 'vuetify/dist/vuetify.js',
                 'vuetify/dist/vuetify.min.css',
                 'event-source-polyfill',
