@@ -3,8 +3,12 @@
     background $dark-purple
     border-left 5px $pink solid
 
+    a
+        text-decoration none
+
     .toolbar
         background linear-gradient(to right, $dark-purple, $pink)
+        position relative
 
         &:after
             background-image url("../../assets/nav-bg.png")
@@ -18,12 +22,12 @@
             position: absolute;
             z-index: -1;
 
-        img
+        .logo
             width 100px
             margin 0 auto
 
         button
-            background-image url("../../assets/nav-menu.png")
-            background-size: 100% 100%
-            width 34px
-            height 17px
+            color white
+            position absolute
+            left 18px
+            color: $pink

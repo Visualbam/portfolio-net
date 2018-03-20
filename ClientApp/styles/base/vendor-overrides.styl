@@ -1,0 +1,24 @@
+.toolbar__content > :not(.btn):not(.menu):last-child:not(:only-child)
+    margin-right auto
+
+.list
+    padding 0
+
+    a, .icon
+        color: grey
+
+        &:hover
+            color: $light-purple!important
+            background lighten($dark-purple, 8%)!important
+
+            .icon
+                color: $light-purple!important
+
+.list .router-link-exact-active .list__tile, .list .router-link-exact-active .icon
+    color $light-purple!important
+    background-color lighten($dark-purple, 8%)!important
+
+.list .icon
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 auto;
