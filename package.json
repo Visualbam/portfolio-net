@@ -1,0 +1,37 @@
+{
+    "name": "visualbam",
+    "private": true,
+    "version": "0.0.0",
+    "devDependencies": {
+        "@types/webpack-env": "^1.13.0",
+        "aspnet-webpack": "^2.0.1",
+        "awesome-typescript-loader": "^3.0.0",
+        "axios": "^0.18.0",
+        "css-loader": "^0.28.0",
+        "css-selector-tokenizer": "^0.7.0",
+        "event-source-polyfill": "^0.0.7",
+        "extract-text-webpack-plugin": "^3.0.0",
+        "file-loader": "^1.1.4",
+        "isomorphic-fetch": "^2.2.1",
+        "jquery": "^3.1.1",
+        "postcss-import": "^11.0.0",
+        "postcss-loader": "^2.0.8",
+        "postcss-url": "^7.2.1",
+        "style-loader": "^0.13.1",
+        "stylus": "^0.54.5",
+        "stylus-loader": "^3.0.2",
+        "typescript": "^2.7.2",
+        "url-loader": "^0.5.7",
+        "vue": "^2.5.2",
+        "vue-loader": "^13.3.0",
+        "vue-property-decorator": "^6.0.0",
+        "vue-router": "^3.0.1",
+        "vue-style-loader": "^3.0.1",
+        "vue-template-compiler": "^2.5.2",
+        "webpack": "^3.6.0",
+        "webpack-hot-middleware": "^2.12.2"
+    },
+    "dependencies": {
+        "vuetify": "^1.0.0"
+    }
+}
