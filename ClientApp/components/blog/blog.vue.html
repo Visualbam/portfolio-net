@@ -1,51 +1,58 @@
 <template>
-    <v-layout>
-        <v-flex sm12>
-            <v-tabs v-model="active">
-                <v-tab ripple> Design </v-tab>
-                <v-tab-item>
-                    <v-card flat>
-                        <v-card-text>
-                            <span>Whether it's visual or architecture</span>
-                            <h1>Design is important</h1>
-                            <p>Understanding core design principles is key to expanding your capabilities. My degree is in design but I consider it a skillset in my developer toolbox.</p>
-                        </v-card-text>
-                    </v-card>
-                </v-tab-item>
+    <div class="blog">
+        <v-layout>
+            <v-flex sm12>
 
-                <v-tab ripple> Development </v-tab>
-                <v-tab-item>
-                    <v-card flat>
-                        <v-card-text>
-                            <span>Day or night you can find me learning</span>
-                            <h1>Development for successfull projects</h1>
-                            <p>Understanding core design principles is key to expanding your capabilities. My degree is in design but I consider it a skillset in my developer toolbox.</p>
-                        </v-card-text>
-                    </v-card>
-                </v-tab-item>
+                <header>
 
-                <v-tab ripple> UI/UX </v-tab>
-                <v-tab-item>
-                    <v-card flat>
-                        <v-card-text>
-                            <span>Witty retort</span>
-                            <h1>UI/UX</h1>
-                            <p>Understanding core design principles is key to expanding your capabilities. My degree is in design but I consider it a skillset in my developer toolbox.</p>
-                        </v-card-text>
-                    </v-card>
-                </v-tab-item>
-            </v-tabs>
+                </header>
 
-            <v-card v-for="post in posts" :key="post.post_id">
-                <v-card-title primary-title>
-                    <div>
-                        <h3 class="headline mb-0">{{post.title}}</h3>
-                        <div>{{post.content}}</div>
-                    </div>
-                </v-card-title>
-            </v-card>
-        </v-flex>
-    </v-layout>
+
+                <v-tabs v-model="active">
+                    <v-tab ripple> Design </v-tab>
+                    <v-tab-item>
+                        <v-card flat>
+                            <v-card-text>
+                                <span>Whether it's visual or architecture</span>
+                                <h1>Design is important</h1>
+                                <p>Understanding core design principles is key to expanding your capabilities. My degree is in design but I consider it a skillset in my developer toolbox.</p>
+                            </v-card-text>
+                        </v-card>
+                    </v-tab-item>
+
+                    <v-tab ripple> Development </v-tab>
+                    <v-tab-item>
+                        <v-card flat>
+                            <v-card-text>
+                                <span>Day or night you can find me learning</span>
+                                <h1>Development for successfull projects</h1>
+                                <p>Understanding core design principles is key to expanding your capabilities. My degree is in design but I consider it a skillset in my developer toolbox.</p>
+                            </v-card-text>
+                        </v-card>
+                    </v-tab-item>
+
+                    <v-tab ripple> UI/UX </v-tab>
+                    <v-tab-item>
+                        <v-card flat>
+                            <v-card-text>
+                                <span>Witty retort</span>
+                                <h1>UI/UX</h1>
+                                <p>Understanding core design principles is key to expanding your capabilities. My degree is in design but I consider it a skillset in my developer toolbox.</p>
+                            </v-card-text>
+                        </v-card>
+                    </v-tab-item>
+                </v-tabs>
+                <v-card v-for="post in posts" :key="post.post_id">
+                    <v-card-title primary-title>
+                        <div>
+                            <h3 class="headline mb-0">{{post.title}}</h3>
+                            <div>{{post.content}}</div>
+                        </div>
+                    </v-card-title>
+                </v-card>
+            </v-flex>
+        </v-layout>
+    </div>
 </template>
 
 <script src="./blog.ts"></script>
