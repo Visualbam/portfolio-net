@@ -1,57 +1,31 @@
 <template>
     <div class="blog">
-        <v-layout>
-            <v-flex sm12>
-
-                <header>
-
-                </header>
-
-
-                <v-tabs v-model="active">
-                    <v-tab ripple> Design </v-tab>
-                    <v-tab-item>
-                        <v-card flat>
-                            <v-card-text>
-                                <span>Whether it's visual or architecture</span>
-                                <h1>Design is important</h1>
-                                <p>Understanding core design principles is key to expanding your capabilities. My degree is in design but I consider it a skillset in my developer toolbox.</p>
-                            </v-card-text>
-                        </v-card>
-                    </v-tab-item>
-
-                    <v-tab ripple> Development </v-tab>
-                    <v-tab-item>
-                        <v-card flat>
-                            <v-card-text>
-                                <span>Day or night you can find me learning</span>
-                                <h1>Development for successfull projects</h1>
-                                <p>Understanding core design principles is key to expanding your capabilities. My degree is in design but I consider it a skillset in my developer toolbox.</p>
-                            </v-card-text>
-                        </v-card>
-                    </v-tab-item>
-
-                    <v-tab ripple> UI/UX </v-tab>
-                    <v-tab-item>
-                        <v-card flat>
-                            <v-card-text>
-                                <span>Witty retort</span>
-                                <h1>UI/UX</h1>
-                                <p>Understanding core design principles is key to expanding your capabilities. My degree is in design but I consider it a skillset in my developer toolbox.</p>
-                            </v-card-text>
-                        </v-card>
-                    </v-tab-item>
-                </v-tabs>
-                <v-card v-for="post in posts" :key="post.post_id">
-                    <v-card-title primary-title>
-                        <div>
-                            <h3 class="headline mb-0">{{post.title}}</h3>
-                            <div>{{post.content}}</div>
-                        </div>
-                    </v-card-title>
+        <v-tabs v-model="active">
+            <v-tab ripple v-for="tab in tabs"> {{tab.name}} </v-tab>
+            <v-tab-item v-for="tab in tabs">
+                <v-card flat>
+                    <v-card-text>
+                        <span>{{tab.subtitle}}</span>
+                        <h1>{{tab.title}}</h1>
+                        <p>{{tab.content}}</p>
+                    </v-card-text>
                 </v-card>
-            </v-flex>
-        </v-layout>
+            </v-tab-item>
+        </v-tabs>
+        <v-container>
+            <v-layout>
+                <v-flex sm12>
+                    <v-card v-for="post in posts" :key="post.post_id">
+                        <v-card-title primary-title>
+                            <div>
+                                <h3 class="headline mb-0">{{post.title}}</h3>
+                                <div>{{post.content}}</div>
+                            </div>
+                        </v-card-title>
+                    </v-card>
+                </v-flex>
+            </v-layout>
+        </v-container>
     </div>
 </template>
 

@@ -4,9 +4,27 @@ import axios from 'axios';
 
 @Component
 export default class BlogComponent extends Vue {
-    blogHeader: string = 'Welcome!';
     posts: any[] = [];
-    public text: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
+    tabs: any[] = [
+        {
+            name: 'Design',
+            title: 'Design is important',
+            subtitle: 'Whether it\'s visual or architecture',
+            content: 'Understanding core design principles is key to expanding your capabilities. My degree is in design but I consider it a skillset in my developer toolbox.'
+        },
+        {
+            name: 'Development',
+            title: 'Development for successfull projects',
+            subtitle: 'Whether it\'s visual or architecture',
+            content: 'Understanding core design principles is key to expanding your capabilities. My degree is in design but I consider it a skillset in my developer toolbox.'
+        },
+        {
+            name: 'UI/UX',
+            title: 'User Interface & Experience',
+            subtitle: 'Witty retort',
+            content: 'Understanding core design principles is key to expanding your capabilities. My degree is in design but I consider it a skillset in my developer toolbox.'
+        }
+    ];
 
     mounted() {
         axios.get('https://visualbam.azurewebsites.net/api/posts')
