@@ -1,7 +1,45 @@
 @import "./base/variables.styl"
+@import "./vendor-overrides/vf-drawer.styl"
 @import "./layout/side-nav.styl"
-@import "./base/vendor-overrides.styl"
 
 .card {
-    margin-bottom 1rem;
+    margin-bottom 1rem
 }
+
+header {
+    background url("../../assets/main-header@2x.png") no-repeat
+    background-size cover
+    min-height 200px
+    margin-top -5px
+}
+
+.tabs__item {
+    padding 6px 50px
+}
+
+.card__text {
+    padding 30px
+
+    h1 {
+        margin-top -8px
+    }
+
+    p {
+        color #7D7D7D
+        width 45%
+    }
+}
+
+.content--wrap {
+    background #ECECEC
+}
+
+.tabs {
+    box-shadow 0 14px 28px rgba(0,0,0,0.05), 0 10px 10px rgba(0,0,0,0.05)
+    margin-bottom 1rem
+
+    .card {
+        margin-bottom 0
+    }
+}
+

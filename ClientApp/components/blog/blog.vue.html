@@ -1,18 +1,32 @@
 <template>
-    <v-layout>
-        <v-flex xs12 sm6 offset-sm3>
-            <h1>{{blogHeader}}</h1>
-            <p>There are currently {{posts.length}} posts to read.</p>
-            <v-card v-for="post in posts" :key="post.post_id">
-                <v-card-title primary-title>
-                    <div>
-                        <h3 class="headline mb-0">{{post.title}}</h3>
-                        <div>{{post.content}}</div>
-                    </div>
-                </v-card-title>
-            </v-card>
-        </v-flex>
-    </v-layout>
+    <div class="blog">
+        <v-tabs v-model="active">
+            <v-tab ripple v-for="tab in tabs"> {{tab.name}} </v-tab>
+            <v-tab-item v-for="tab in tabs">
+                <v-card flat>
+                    <v-card-text>
+                        <span>{{tab.subtitle}}</span>
+                        <h1>{{tab.title}}</h1>
+                        <p>{{tab.content}}</p>
+                    </v-card-text>
+                </v-card>
+            </v-tab-item>
+        </v-tabs>
+        <v-container>
+            <v-layout>
+                <v-flex sm12>
+                    <v-card v-for="post in posts" :key="post.post_id">
+                        <v-card-title primary-title>
+                            <div>
+                                <h3 class="headline mb-0">{{post.title}}</h3>
+                                <div>{{post.content}}</div>
+                            </div>
+                        </v-card-title>
+                    </v-card>
+                </v-flex>
+            </v-layout>
+        </v-container>
+    </div>
 </template>
 
 <script src="./blog.ts"></script>
