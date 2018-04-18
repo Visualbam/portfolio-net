@@ -1,6 +1,6 @@
 <template>
     <div class="blog">
-        <v-tabs v-model="active">
+        <v-tabs v-model="active" v-bind:class="{ 'tabs__fixed': fixedTabs }">
             <v-tab ripple v-for="tab in tabs"> {{tab.name}} </v-tab>
             <v-tab-item v-for="tab in tabs">
                 <v-card flat>
@@ -12,16 +12,24 @@
                 </v-card>
             </v-tab-item>
         </v-tabs>
-        <v-container>
-            <v-layout>
-                <v-flex sm12>
+        <v-container fluid fill-height v-bind:class="{'tabs__fixed-bottom-content': fixedTabs }">
+            <v-layout justify-center align-center>
+                <v-flex class="post__list" xs12 sm12 md10>
                     <v-card v-for="post in posts" :key="post.post_id">
+                        <div class="post__header">
+                            <p>design</p>
+                        </div>
                         <v-card-title primary-title>
                             <div>
-                                <h3 class="headline mb-0">{{post.title}}</h3>
-                                <div>{{post.content}}</div>
+                                <div class="post__date">January 18, 2018</div>
+                                <h3 class="post__title headline">{{post.title}}</h3>
+                                <div class="post__content">{{post.content | truncate(125)}}</div>
                             </div>
                         </v-card-title>
+                        <div class="post__footer">
+                            <div class="post__time-to-read">10 minutes to read</div>
+                            <div class="post__read">unread</div>
+                        </div>
                     </v-card>
                 </v-flex>
             </v-layout>

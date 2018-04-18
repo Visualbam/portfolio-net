@@ -9,8 +9,9 @@
                 <router-link :to="route.route">
                     <v-list-tile ripple @click="">
                         <v-list-tile-action>
-                            <v-icon v-if="activeRoute === '/' + route.route">lens</v-icon>
-                            <v-icon v-else>panorama_fish_eye</v-icon>
+                            <!--<v-icon v-if="activeRoute === '/' + route.route">lens</v-icon>-->
+                            <!--<v-icon v-else>panorama_fish_eye</v-icon>-->
+                            <v-icon>lens</v-icon>
                         </v-list-tile-action>
                         <v-list-tile-title>{{route.title}}</v-list-tile-title>
                     </v-list-tile>

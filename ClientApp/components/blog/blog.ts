@@ -5,6 +5,7 @@ import axios from 'axios';
 @Component
 export default class BlogComponent extends Vue {
     posts: any[] = [];
+    fixedTabs: boolean = false;
     tabs: any[] = [
         {
             name: 'Design',
@@ -25,6 +26,18 @@ export default class BlogComponent extends Vue {
             content: 'Understanding core design principles is key to expanding your capabilities. My degree is in design but I consider it a skillset in my developer toolbox.'
         }
     ];
+
+    handleScroll(event: any) {
+        this.fixedTabs = event.pageY >= 194;
+    }
+
+    created() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    destroyed() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
 
     mounted() {
         axios.get('https://visualbam.azurewebsites.net/api/posts')

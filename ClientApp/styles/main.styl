@@ -2,44 +2,147 @@
 @import "./vendor-overrides/vf-drawer.styl"
 @import "./layout/side-nav.styl"
 
-.card {
+.card
     margin-bottom 1rem
-}
 
-header {
+
+header
     background url("../../assets/main-header@2x.png") no-repeat
     background-size cover
     min-height 200px
     margin-top -5px
-}
 
-.tabs__item {
-    padding 6px 50px
-}
 
-.card__text {
-    padding 30px
+.tabs__item
+    padding 6px 60px
 
-    h1 {
+
+.card__text
+    padding 2rem
+
+    h1
         margin-top -8px
-    }
+        font-weight 100
 
-    p {
+
+    p
         color #7D7D7D
-        width 45%
-    }
-}
+        max-width 480px
 
-.content--wrap {
+.container
+    padding 6rem
+
+    @media (max-width: 720px)
+        padding 2rem
+
+.content--wrap, body
     background #ECECEC
-}
 
-.tabs {
-    box-shadow 0 14px 28px rgba(0,0,0,0.05), 0 10px 10px rgba(0,0,0,0.05)
-    margin-bottom 1rem
 
-    .card {
+.tabs
+    box-shadow 0 14px 28px rgba(black, .05), 0 10px 10px rgba(black, .05)
+    z-index 2
+
+    .card
         margin-bottom 0
-    }
-}
+
+.tabs__container
+    height 67px
+    //background rgba(138, 113, 253, 0.10)
+    border-bottom 2px solid #efefef
+
+
+.tabs__slider
+    height 3px
+
+
+.accent
+    background linear-gradient(to left, $light-purple 0%, $pink 100%)
+
+
+.tabs__item--active
+    color $light-purple
+
+
+.tabs__fixed
+    position fixed
+    top 0
+    width 100%
+    z-index 2
+    transition ease-in-out all 0.25s
+
+
+.tabs__fixed-bottom-content
+    position relative
+    top 255px
+
+//---------------------------------
+
+.card
+    border-radius 5px
+    //min-height 200px
+
+    .card__title
+        padding 16px
+
+    .post__date
+        font-size 12px
+
+    .post__title
+        margin-bottom 0.5rem
+        color $light-purple
+        font-size 18px !important
+        line-height 1.25 !important
+
+    .post__header
+        background linear-gradient(to right, $light-purple, $pink)
+
+    .post__header p
+        text-transform uppercase
+        padding 4px 16px
+        font-size 11px
+        color white
+        font-weight bold
+        margin 0
+
+    .post__content
+        color darken(#9c9c9c, 25%)
+        line-height 1.5
+        margin-bottom 2rem
+
+    .post__footer
+        display inline-flex
+        position absolute
+        bottom 0
+        font-size 12px
+        border-top 1px solid #e1e1e1
+        margin-top 1rem
+        padding 8px 16px 8px 16px
+        width 100%
+        color #9c9c9c
+        text-transform capitalize
+        background: white
+
+        .post__time-to-read
+            margin-right auto
+
+.post__list
+    display grid
+    grid-column-gap 20px
+    grid-row-gap 10px
+
+    @media (max-width: 720px)
+        grid-template-columns auto
+
+    @media only screen and (min-width:720px)
+        grid-template-columns auto auto
+
+    @media only screen and (min-width:1200px)
+        grid-template-columns auto auto auto
+
+    //@media only screen and (min-width:1280px)
+    //    grid-template-columns auto auto auto auto
+
+
+
 

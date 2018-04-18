@@ -17,7 +17,7 @@ export default class NavComponent extends Vue {
         {
             route: 'counter',
             action: null,
-            title: 'Counter'
+            title: 'Portfolio'
         }
     ];
 

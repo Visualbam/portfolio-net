@@ -19,3 +19,7 @@ new Vue({
     router: new VueRouter({ mode: 'history', routes: routes }),
     render: h => h(require('./components/app/app.vue.html').default)
 });
+
+Vue.filter('truncate', function (text: any, stop: any, clamp: any) {
+    return text.slice(0, stop) + (stop < text.length ? clamp || '...' : '')
+});
